@@ -1,4 +1,4 @@
-```markdown
+
 # 📦 White-box Steganography
 
 **White-box Steganography** is a modular research framework for embedding sensitive data into the text generation process of Large Language Models (LLMs). This repository provides a standardized environment for implementing and benchmarking **linguistic steganography** algorithms, emphasizing the preservation of the model’s original statistical distribution.
@@ -83,3 +83,4 @@ Follow these steps to generate and evaluate stego-text:
 ```bash
 export AC_PRECISION=24
 python scripts/run_gen_stego.py --method ac
+
