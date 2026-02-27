@@ -35,13 +35,13 @@ By decoupling **model orchestration**, **bitstream management**, and **embedding
 ## 📚 Methodology Overview
 
 | Method | Description |
-| --- | --- |
-| **AC** | Arithmetic Coding with deterministic quantization. |
-| **ADG** | Adaptive Dynamic Grouping for balanced security and capacity. |
-| **Discop** | Distribution Copies using Huffman recursion and PRNG rotation. |
-| **iMEC** | Iterative Minimum-Entropy Coupling with per-sample belief states. |
-| **Meteor** | Masking-based approach utilizing HMAC-DRBG security. |
-| **SparSamp** | Sparse Sampling designed to minimize statistical divergence. |
+| :--- | :--- |
+| **AC** | Maps secret bits into model distribution intervals via recursive arithmetic coding. |
+| **Meteor** | Reduces finite-precision sampling bias to better preserve the target distribution. |
+| **ADG** | Embeds data by adaptively grouping tokens based on their conditional probabilities. |
+| **iMEC** | Optimizes capacity and security by framing steganography as a minimum-entropy coupling task. |
+| **Discop** | Mitigates grouping-induced statistical bias using multiple distribution copies for practical security. |
+| **SparSamp** | Employs sparse sampling with `O(1)` complexity for efficient, plug-and-play steganography. |
 
 ---
 
@@ -83,4 +83,5 @@ Follow these steps to generate and evaluate stego-text:
 ```bash
 export AC_PRECISION=24
 python scripts/run_gen_stego.py --method ac
+
 
