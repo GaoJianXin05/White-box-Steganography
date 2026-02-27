@@ -2,7 +2,6 @@ import os
 import random
 import numpy as np
 import torch
-
 os.environ.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
 
 
@@ -18,7 +17,7 @@ class GlobalConfig:
     OUTPUT_DIR = os.getenv("OUTPUT_DIR", "outputs")
 
     # ---- Experiment size ----
-    NUM_SENTENCES = int(os.getenv("NUM_SENTENCES", "11000"))
+    NUM_SENTENCES = int(os.getenv("NUM_SENTENCES", "10000"))
     EXPECTED_MESSAGE_BITS = int(os.getenv("EXPECTED_MESSAGE_BITS", "1000000"))
 
     # ---- Batch generation ----
@@ -29,7 +28,7 @@ class GlobalConfig:
     MIN_NEW_TOKENS = int(os.getenv("MIN_NEW_TOKENS", "10"))
 
     # ---- Sampling parameters (algorithm-level) ----
-    TEMPERATURE = float(os.getenv("TEMPERATURE", "1.1"))
+    TEMPERATURE = float(os.getenv("TEMPERATURE", "1"))
     TOP_K = int(os.getenv("TOP_K", "0"))
     TOP_P = float(os.getenv("TOP_P", "0.99"))
 
@@ -122,4 +121,5 @@ class GlobalConfig:
             torch.backends.cudnn.benchmark = True
 
         torch.set_float32_matmul_precision("high")
+
         print(f"[Seed] SEED={cls.SEED}  (set SEED env to reproduce; SEED=-1 for random each run)")
